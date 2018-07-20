@@ -26,6 +26,7 @@ def login_member(request):
         oh_member = oh_code_to_member(code=code)
     except Exception:
         oh_member = None
+        print("exception while logging in")
     if oh_member:
         # Log in the user.
         user = oh_member.user

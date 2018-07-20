@@ -50,7 +50,7 @@ class OpenHumansMember(models.Model):
         return (arrow.now() + timedelta(seconds=expires_in)).format()
 
     @staticmethod
-    def get_auth_url(self):
+    def get_auth_url():
         """Gets the authentication url."""
         if settings.OPENHUMANS_CLIENT_ID and settings.OPENHUMANS_REDIRECT_URI:
             auth_url = ohapi.api.oauth2_auth_url(
