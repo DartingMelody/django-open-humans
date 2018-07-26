@@ -6,12 +6,11 @@ from django.contrib.auth import get_user_model
 from django.db import models
 import requests
 import ohapi
+from django.urls import reverse
 
 OH_BASE_URL = settings.OPENHUMANS_OH_BASE_URL
 
 OPPENHUMANS_APP_BASE_URL = settings.OPENHUMANS_APP_BASE_URL
-
-OH_OAUTH2_REDIRECT_URI = '{}/complete'.format(settings.OPENHUMANS_APP_BASE_URL)
 
 User = get_user_model()
 
@@ -52,10 +51,10 @@ class OpenHumansMember(models.Model):
     @staticmethod
     def get_auth_url():
         """Gets the authentication url."""
-        if settings.OPENHUMANS_CLIENT_ID and settings.OPENHUMANS_REDIRECT_URI:
+        if settings.OPENHUMANS_CLIENT_ID:
             auth_url = ohapi.api.oauth2_auth_url(
                 client_id=settings.OPENHUMANS_CLIENT_ID,
-                redirect_uri=settings.OPENHUMANS_REDIRECT_URI)
+                redirect_uri=OPPENHUMANS_APP_BASE_URL + reverse("openhumans:complete"))
         else:
             auth_url = ''
         return auth_url
