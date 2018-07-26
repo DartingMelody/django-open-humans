@@ -13,8 +13,6 @@ OH_BASE_URL = settings.OPENHUMANS_OH_BASE_URL
 
 OPPENHUMANS_APP_BASE_URL = settings.OPENHUMANS_APP_BASE_URL
 
-OH_OAUTH2_REDIRECT_URI = '{}/complete'.format(settings.OPENHUMANS_APP_BASE_URL)
-
 User = get_user_model()
 
 

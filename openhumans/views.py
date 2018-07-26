@@ -58,7 +58,6 @@ from django.shortcuts import render, redirect
 
 OH_BASE_URL = settings.OPENHUMANS_OH_BASE_URL
 OH_API_BASE = OH_BASE_URL + '/api/direct-sharing'
-OH_OAUTH2_REDIRECT_URI = '{}/complete'.format(settings.OPENHUMANS_APP_BASE_URL)
 
 def login_member(request):
     code = request.GET.get('code', '')
