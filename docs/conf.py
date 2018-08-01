@@ -20,11 +20,19 @@ sys.path.insert(0, os.path.abspath('..'))
 
 from django.conf import settings
 
-settings.configure()
+settings.configure(
+    INSTALLED_APPS = [
+        'django.contrib.contenttypes',
+        'django.contrib.auth',
+        'openhumans'
+    ]
+)
+
+#settings.configure()
 settings.OPENHUMANS_OH_BASE_URL = "blabla"
 settings.OPENHUMANS_APP_BASE_URL = "blabla"
-
-
+settings.OPENHUMANS_CLIENT_ID = "blabla"
+settings.OPENHUMANS_CLIENT_SECRET = "blabla"
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
 #os.environ["OPENHUMANS_OH_BASE_URL"] =  "OPENHUMANS_OH_BASE_URL"
 
