@@ -29,10 +29,10 @@ settings.configure(
 )
 
 #settings.configure()
-settings.OPENHUMANS_OH_BASE_URL = "blabla"
-settings.OPENHUMANS_APP_BASE_URL = "blabla"
-settings.OPENHUMANS_CLIENT_ID = "blabla"
-settings.OPENHUMANS_CLIENT_SECRET = "blabla"
+settings.OPENHUMANS_OH_BASE_URL = "OPENHUMANS_OH_BASE_URL"
+settings.OPENHUMANS_APP_BASE_URL = "OPENHUMANS_APP_BASE_URL"
+settings.OPENHUMANS_CLIENT_ID = "OPENHUMANS_CLIENT_ID"
+settings.OPENHUMANS_CLIENT_SECRET = "OPENHUMANS_CLIENT_SECRET"
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
 #os.environ["OPENHUMANS_OH_BASE_URL"] =  "OPENHUMANS_OH_BASE_URL"
 
